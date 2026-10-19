@@ -1,0 +1,39 @@
+{
+  "validatedOn": "2026-10-16",
+  "status": "PASSED_ARTIFACT_VALIDATION",
+  "scope": "M0 research artifacts only; M1 runtime evidence is separate",
+  "checks": [
+    "All JSON files parse without duplicate keys or nonfinite constants",
+    "Draft 2020-12 project schema and illustrative project shape",
+    "Fixture IDs, bounds, takes, anchors, approvals, routing, automation and draft render consistency",
+    "61 local Markdown links resolve inside Soundr",
+    "18 requirements covered by 17 planned scenarios; all six application runs remain NOT RUN",
+    "Twelve successful source receipts at one exact Ardour commit, with hashes and valid symbol locations",
+    "REAPER 7.82 API documentation hash, nineteen function anchors and seven documented attributes",
+    "Render manifest remains an unexecuted template with unmeasured metrics"
+  ],
+  "exampleReadiness": {
+    "requiredSources": [
+      "source-dialogue-a",
+      "source-footstep",
+      "source-music",
+      "source-room"
+    ],
+    "unresolvedRequiredSources": [
+      "source-dialogue-a",
+      "source-footstep",
+      "source-music",
+      "source-room"
+    ],
+    "declaredDependenciesReady": false,
+    "actualPlaybackTested": false
+  },
+  "notTested": [
+    "Audio engine or UI",
+    "Native application scene runs",
+    "Media decoding or audible quality",
+    "Save/reopen runtime durability",
+    "Sync or exports",
+    "MCP runtime or sibling integration"
+  ]
+}

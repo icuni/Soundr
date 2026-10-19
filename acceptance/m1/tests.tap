@@ -1,0 +1,158 @@
+
+> orama-soundr@0.2.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: WAV imports preserve PCM and reject truncated/wrong-rate/nonfinite media
+ok 1 - WAV imports preserve PCM and reject truncated/wrong-rate/nonfinite media
+  ---
+  duration_ms: 69.3685
+  type: 'test'
+  ...
+# Subtest: fractional frame conversion rounds absolute positions without cumulative drift
+ok 2 - fractional frame conversion rounds absolute positions without cumulative drift
+  ---
+  duration_ms: 1.7139
+  type: 'test'
+  ...
+# Subtest: splitting inside overlapping fades preserves decoded mix samples exactly
+ok 3 - splitting inside overlapping fades preserves decoded mix samples exactly
+  ---
+  duration_ms: 148.9935
+  type: 'test'
+  ...
+# Subtest: durable commands are atomic, retry-safe, undoable and reopenable
+ok 4 - durable commands are atomic, retry-safe, undoable and reopenable
+  ---
+  duration_ms: 4039.4678
+  type: 'test'
+  ...
+# Subtest: failed checkpoint commit leaves the prior project and request record intact
+ok 5 - failed checkpoint commit leaves the prior project and request record intact
+  ---
+  duration_ms: 819.7465
+  type: 'test'
+  ...
+# Subtest: corrupt current checkpoint recovers a valid previous version with a warning
+ok 6 - corrupt current checkpoint recovers a valid previous version with a warning
+  ---
+  duration_ms: 1030.7249
+  type: 'test'
+  ...
+# Subtest: routing cycles fail atomically
+ok 7 - routing cycles fail atomically
+  ---
+  duration_ms: 491.1116
+  type: 'test'
+  ...
+# Subtest: story adapters preserve upstream IDs and avoid character name joins
+ok 8 - story adapters preserve upstream IDs and avoid character name joins
+  ---
+  duration_ms: 12.77
+  type: 'test'
+  ...
+# Subtest: reconform preview preserves originals and requires explicit spanning-audio choices
+ok 9 - reconform preview preserves originals and requires explicit spanning-audio choices
+  ---
+  duration_ms: 65.6328
+  type: 'test'
+  ...
+# Subtest: HTTP workstation and official MCP client share one durable operation service
+    # Subtest: real stdio tool discovery, create retries and local HTTP authorization
+    ok 1 - real stdio tool discovery, create retries and local HTTP authorization
+      ---
+      duration_ms: 1299.0158
+      type: 'test'
+      ...
+    # Subtest: story IDs, immutable media, UI edit visible to MCP and duplicate MCP operation exactly once
+    ok 2 - story IDs, immutable media, UI edit visible to MCP and duplicate MCP operation exactly once
+      ---
+      duration_ms: 38693.1978
+      type: 'test'
+      ...
+    # Subtest: two frozen deliveries match bytes, share BWF origins and sum to master
+    ok 3 - two frozen deliveries match bytes, share BWF origins and sum to master
+      ---
+      duration_ms: 7837.1123
+      type: 'test'
+      ...
+# Soundr render failure job-bdac53cc75a1859eac49a422 MEDIA_UNAVAILABLE A required recording is missing.
+# Soundr render failure job-5c43a69f75a99955499cf5dd MEDIA_CHANGED A source copy no longer matches its recorded version.
+    # Subtest: missing/changed required media fails delivery; saved versions reopen
+    ok 4 - missing/changed required media fails delivery; saved versions reopen
+      ---
+      duration_ms: 55729.4612
+      type: 'test'
+      ...
+# Protocol and delivery evidence: D:\\ICUNI Group\\ICUNI Labs\\Soundr\\output\\tests\\run-611ef9a7-3434-4954-9770-132c066bd751\\acceptance.json
+    1..4
+ok 10 - HTTP workstation and official MCP client share one durable operation service
+  ---
+  duration_ms: 106844.8964
+  type: 'test'
+  ...
+# Soundr render failure job-eedaa2249a1833dcc4619e99 MEDIA_UNAVAILABLE Add a sound or picture before playback; add an enabled sound before export.
+# Subtest: an animatic plays before audio import; an empty delivery fails explicitly
+ok 11 - an animatic plays before audio import; an empty delivery fails explicitly
+  ---
+  duration_ms: 10376.769
+  type: 'test'
+  ...
+# Subtest: parked sounds keep removed-shot identities through later reconforms
+ok 12 - parked sounds keep removed-shot identities through later reconforms
+  ---
+  duration_ms: 175.4119
+  type: 'test'
+  ...
+# Subtest: unattached audio in a shortened shot needs a resolution; direct imported timing is blocked
+ok 13 - unattached audio in a shortened shot needs a resolution; direct imported timing is blocked
+  ---
+  duration_ms: 77.394
+  type: 'test'
+  ...
+# Subtest: private playback API serves real float PCM rather than a download-manager WAV URL
+ok 14 - private playback API serves real float PCM rather than a download-manager WAV URL
+  ---
+  duration_ms: 3596.2593
+  type: 'test'
+  ...
+# Soundr render failure job-61ebd19c207a9d644dfd1cb3 ENOENT ENOENT: no such file or directory, open 'D:\\ICUNI Group\\ICUNI Labs\\Soundr\\output\\tests\\run-f36378dd-8208-4269-8e55-ea1b2788eaa8\\jobs\\job-61ebd19c207a9d644dfd1cb3\\request.json'
+# Subtest: a missing queued render request becomes a terminal failure receipt
+ok 15 - a missing queued render request becomes a terminal failure receipt
+  ---
+  duration_ms: 653.1392
+  type: 'test'
+  ...
+# Subtest: fractional reconform accepts its exact rounded endpoint and rejects unsafe timeline origins
+ok 16 - fractional reconform accepts its exact rounded endpoint and rejects unsafe timeline origins
+  ---
+  duration_ms: 53.8355
+  type: 'test'
+  ...
+# Subtest: a same-cut picture upgrade preserves every edit and never adopts changed timing
+ok 17 - a same-cut picture upgrade preserves every edit and never adopts changed timing
+  ---
+  duration_ms: 6.6344
+  type: 'test'
+  ...
+# Subtest: render preflight rejects excessive working memory before allocating scene buffers
+ok 18 - render preflight rejects excessive working memory before allocating scene buffers
+  ---
+  duration_ms: 691.1187
+  type: 'test'
+  ...
+# Subtest: picture source-in stays excluded before its timeline start in seek and transport
+ok 19 - picture source-in stays excluded before its timeline start in seek and transport
+  ---
+  duration_ms: 4.6443
+  type: 'test'
+  ...
+1..19
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 139177.0691

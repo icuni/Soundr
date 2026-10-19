@@ -1,0 +1,1223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:icuni:soundr:project:0.1.0",
+  "title": "Soundr proposed logical project model v0.1",
+  "description": "M1 mono/stereo 48 kHz unity-rate model. Schema validation does not prove media availability, referential integrity, audio correctness or durability.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "purpose": {
+      "enum": [
+        "project",
+        "illustrative-fixture"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "sampleRate": {
+      "const": 48000
+    },
+    "activePictureRevisionId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "pictureRevisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/picture"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "clips": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/clip"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/track"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "buses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bus"
+      },
+      "minItems": 1,
+      "maxItems": 100000
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/route"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "automation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/automation"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "cues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cue"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "takeGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/takeGroup"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    },
+    "renderJobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/renderJob"
+      },
+      "minItems": 0,
+      "maxItems": 100000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "purpose",
+    "id",
+    "revision",
+    "title",
+    "sampleRate",
+    "activePictureRevisionId",
+    "sources",
+    "pictureRevisions",
+    "clips",
+    "tracks",
+    "buses",
+    "routes",
+    "automation",
+    "cues",
+    "takeGroups",
+    "renderJobs"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sampleRate": {
+          "const": 48000
+        },
+        "channelCount": {
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "durationSamples": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "availability": {
+          "enum": [
+            "unresolved",
+            "verified",
+            "missing"
+          ]
+        },
+        "role": {
+          "enum": [
+            "original",
+            "derived"
+          ]
+        },
+        "parentSourceId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "uri",
+        "sha256",
+        "sampleRate",
+        "channelCount",
+        "durationSamples",
+        "availability",
+        "role",
+        "parentSourceId"
+      ],
+      "additionalProperties": false
+    },
+    "picture": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "availability": {
+          "enum": [
+            "unresolved",
+            "verified",
+            "missing"
+          ]
+        },
+        "fps": {
+          "type": "object",
+          "properties": {
+            "numerator": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120000
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1001
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        "startFrame": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "durationFrames": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "timelineStartSample": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "startTimecode": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}:\\d{2}:\\d{2}$"
+        },
+        "dropFrame": {
+          "const": false
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "uri",
+        "sha256",
+        "availability",
+        "fps",
+        "startFrame",
+        "durationFrames",
+        "timelineStartSample",
+        "startTimecode",
+        "dropFrame"
+      ],
+      "additionalProperties": false
+    },
+    "fade": {
+      "type": "object",
+      "properties": {
+        "durationSamples": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "curve": {
+          "enum": [
+            "equal-gain",
+            "equal-power"
+          ]
+        }
+      },
+      "required": [
+        "durationSamples",
+        "curve"
+      ],
+      "additionalProperties": false
+    },
+    "clipAnchor": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "absolute"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "cue"
+            },
+            "cueId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            "offsetSamples": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "type",
+            "cueId",
+            "offsetSamples"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "automationAnchor": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "timeline"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "cue"
+            },
+            "cueId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            }
+          },
+          "required": [
+            "type",
+            "cueId"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "clip": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "sourceId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "trackId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "sourceInSample": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "timelineStartSample": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "durationSamples": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "gainDb": {
+          "type": "number",
+          "minimum": -120,
+          "maximum": 36
+        },
+        "isEnabled": {
+          "type": "boolean"
+        },
+        "fadeIn": {
+          "$ref": "#/$defs/fade"
+        },
+        "fadeOut": {
+          "$ref": "#/$defs/fade"
+        },
+        "takeId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cueIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 100000,
+          "uniqueItems": true
+        },
+        "anchor": {
+          "$ref": "#/$defs/clipAnchor"
+        }
+      },
+      "required": [
+        "id",
+        "sourceId",
+        "trackId",
+        "sourceInSample",
+        "timelineStartSample",
+        "durationSamples",
+        "gainDb",
+        "isEnabled",
+        "fadeIn",
+        "fadeOut",
+        "takeId",
+        "cueIds",
+        "anchor"
+      ],
+      "additionalProperties": false
+    },
+    "processor": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            "type": {
+              "const": "builtin.gain"
+            },
+            "version": {
+              "const": "1"
+            },
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "latencySamples": {
+              "const": 0
+            },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "gainDb": {
+                  "type": "number",
+                  "minimum": -120,
+                  "maximum": 36
+                }
+              },
+              "required": [
+                "gainDb"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "type",
+            "version",
+            "isEnabled",
+            "latencySamples",
+            "parameters"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            "type": {
+              "const": "builtin.highpass"
+            },
+            "version": {
+              "const": "1"
+            },
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "latencySamples": {
+              "const": 0
+            },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "cutoffHz": {
+                  "type": "number",
+                  "minimum": 20,
+                  "maximum": 20000
+                },
+                "q": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 10
+                }
+              },
+              "required": [
+                "cutoffHz",
+                "q"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "type",
+            "version",
+            "isEnabled",
+            "latencySamples",
+            "parameters"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "track": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "channelCount": {
+          "const": 2
+        },
+        "clipIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 100000,
+          "uniqueItems": true
+        },
+        "overlapPolicy": {
+          "enum": [
+            "mix",
+            "selected-take"
+          ]
+        },
+        "gainDb": {
+          "type": "number",
+          "minimum": -120,
+          "maximum": 36
+        },
+        "pan": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "isMuted": {
+          "type": "boolean"
+        },
+        "processors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/processor"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "channelCount",
+        "clipIds",
+        "overlapPolicy",
+        "gainDb",
+        "pan",
+        "isMuted",
+        "processors"
+      ],
+      "additionalProperties": false
+    },
+    "bus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "role": {
+          "enum": [
+            "master",
+            "dialogue",
+            "music",
+            "effects",
+            "aux"
+          ]
+        },
+        "channelCount": {
+          "const": 2
+        },
+        "gainDb": {
+          "type": "number",
+          "minimum": -120,
+          "maximum": 36
+        },
+        "isMuted": {
+          "type": "boolean"
+        },
+        "processors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/processor"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "role",
+        "channelCount",
+        "gainDb",
+        "isMuted",
+        "processors"
+      ],
+      "additionalProperties": false
+    },
+    "route": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "fromId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "toBusId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "tap": {
+          "enum": [
+            "pre-fader",
+            "post-fader"
+          ]
+        },
+        "gainDb": {
+          "type": "number",
+          "minimum": -120,
+          "maximum": 36
+        },
+        "channelMap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "to": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "gain": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "gain"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "id",
+        "fromId",
+        "toBusId",
+        "tap",
+        "gainDb",
+        "channelMap"
+      ],
+      "additionalProperties": false
+    },
+    "externalRef": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "enum": [
+            "screenwritr",
+            "storytellr"
+          ]
+        },
+        "projectId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "entityType": {
+          "enum": [
+            "character",
+            "line",
+            "shot",
+            "event",
+            "scene"
+          ]
+        },
+        "entityId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "system",
+        "projectId",
+        "entityType",
+        "entityId",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "approval": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "needs-review",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewerId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approvedTakeId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approvedPictureRevisionId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "status",
+        "reviewerId",
+        "approvedTakeId",
+        "approvedPictureRevisionId",
+        "notes"
+      ],
+      "additionalProperties": false
+    },
+    "cue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "kind": {
+          "enum": [
+            "dialogue",
+            "effect",
+            "ambience",
+            "music"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "textRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "startSample": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "durationSamples": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "pictureRevisionId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "storyRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/externalRef"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "approval": {
+          "$ref": "#/$defs/approval"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "label",
+        "text",
+        "textRevision",
+        "startSample",
+        "durationSamples",
+        "pictureRevisionId",
+        "storyRefs",
+        "approval"
+      ],
+      "additionalProperties": false
+    },
+    "take": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "rating": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "rating",
+        "notes"
+      ],
+      "additionalProperties": false
+    },
+    "takeGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "cueId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "selectedTakeId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "takes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/take"
+          },
+          "minItems": 1,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "id",
+        "cueId",
+        "selectedTakeId",
+        "takes"
+      ],
+      "additionalProperties": false
+    },
+    "automation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "target": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "track",
+                "bus",
+                "processor"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            "parameter": {
+              "enum": [
+                "gainDb",
+                "cutoffHz",
+                "q"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "id",
+            "parameter"
+          ],
+          "additionalProperties": false
+        },
+        "anchor": {
+          "$ref": "#/$defs/automationAnchor"
+        },
+        "interpolation": {
+          "enum": [
+            "linear",
+            "step"
+          ]
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timeSample": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "timeSample",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        }
+      },
+      "required": [
+        "id",
+        "target",
+        "anchor",
+        "interpolation",
+        "points"
+      ],
+      "additionalProperties": false
+    },
+    "renderJob": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "queued",
+            "running",
+            "completed",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "projectRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "projectContentHash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pictureRevisionId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "startSample": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "durationSamples": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "busId": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+              },
+              "relativePath": {
+                "type": "string",
+                "pattern": "^renders/[A-Za-z0-9_-][A-Za-z0-9._-]*\\.wav$"
+              }
+            },
+            "required": [
+              "busId",
+              "relativePath"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 128
+        },
+        "container": {
+          "const": "wav"
+        },
+        "encoding": {
+          "const": "pcm_s24le"
+        },
+        "sampleRate": {
+          "const": 48000
+        },
+        "channelCount": {
+          "const": 2
+        },
+        "tailSamples": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "normalization": {
+          "const": "off"
+        },
+        "dither": {
+          "const": "off"
+        },
+        "tap": {
+          "enum": [
+            "post-bus-pre-master",
+            "master-output"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "projectRevision",
+        "projectContentHash",
+        "pictureRevisionId",
+        "startSample",
+        "durationSamples",
+        "outputs",
+        "container",
+        "encoding",
+        "sampleRate",
+        "channelCount",
+        "tailSamples",
+        "normalization",
+        "dither",
+        "tap"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

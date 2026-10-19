@@ -1,0 +1,698 @@
+{
+  "schema": "org.icuni.soundr.milestone-verification",
+  "schemaVersion": 1,
+  "collectedAt": "2026-10-16T16:42:51.768Z",
+  "status": "PASSED_GENERATED_MEDIA_ENGINEERING_CHECKS",
+  "application": "Orama Soundr",
+  "version": "0.2.0",
+  "node": "v22.18.0",
+  "platform": "win32",
+  "tests": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "receipt": "output/final-tests.tap"
+  },
+  "dependencyAudit": {
+    "knownVulnerabilities": 0,
+    "dependencies": [
+      {
+        "name": "@modelcontextprotocol/sdk",
+        "version": "1.32.1",
+        "license": "MIT"
+      },
+      {
+        "name": "zod",
+        "version": "4.1.12",
+        "license": "MIT"
+      }
+    ]
+  },
+  "scene": {
+    "status": "passed",
+    "generatedMedia": true,
+    "voiceMode": "Generated tone placeholders",
+    "before": {
+      "jobId": "job-4b39b6d6c02ab6978f01b373",
+      "projectRevision": 13,
+      "contentHash": "ea46c83d9d21effe302268cf7af5ea426c78584cf0797bda96a7e21b828cdf42",
+      "frames": 3600000,
+      "durationSeconds": 75,
+      "bwfOrigin": 172800000,
+      "stemSumMaxDifference": 1.1920928955078125e-7,
+      "whiteFrames": [
+        {
+          "second": 0,
+          "frame": 0,
+          "grey": 255,
+          "audioImpulse": 0.5626623630523682
+        },
+        {
+          "second": 28,
+          "frame": 672,
+          "grey": 255,
+          "audioImpulse": 0.46557438373565674
+        },
+        {
+          "second": 50,
+          "frame": 1200,
+          "grey": 255,
+          "audioImpulse": 0.5599628686904907
+        },
+        {
+          "second": 70,
+          "frame": 1680,
+          "grey": 255,
+          "audioImpulse": 0.5764011144638062
+        }
+      ],
+      "independentProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 24,
+            "duration_ts": 3600000
+          }
+        ],
+        "format": {
+          "tags": {
+            "time_reference": "172800000"
+          }
+        }
+      },
+      "outputs": [
+        {
+          "role": "master",
+          "busId": "bus-master",
+          "file": "master.wav",
+          "sha256": "955a29741d5ab583f788be83c96cc9e3be7f74f687cc63915f7fcf3cef4df17b",
+          "bytes": 21600654,
+          "frames": 3600000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -4.83367333661217,
+          "rmsDbfs": -30.915794853393948,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "dialogue",
+          "busId": "bus-dialogue",
+          "file": "dialogue.wav",
+          "sha256": "9ab0b12c5e7d77497ac5b25966484e024e9cd2b50995e1c8eab49b92359e6b78",
+          "bytes": 21600654,
+          "frames": 3600000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -17.65580443331609,
+          "rmsDbfs": -37.65524584918244,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "music",
+          "busId": "bus-music",
+          "file": "music.wav",
+          "sha256": "150d58937f9ae2df89d5a82a613d24a3e5bc3bd88c97db1c92774a5c2aab06df",
+          "bytes": 21600654,
+          "frames": 3600000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -25.753350301993642,
+          "rmsDbfs": -32.51666956840847,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "effects",
+          "busId": "bus-effects",
+          "file": "effects.wav",
+          "sha256": "6dd969ff40cc8d2c6d2102126cdcf949e4288da4ee203e56f57a27d606513f61",
+          "bytes": 21600654,
+          "frames": 3600000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -4.785504661286789,
+          "rmsDbfs": -41.07162268776803,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        }
+      ],
+      "renderElapsedMs": 11513,
+      "repeatJobId": "job-c5198259628790b4d5805f6f",
+      "byteIdenticalRepeatedExport": true,
+      "sourcesUnchanged": true,
+      "uiDialogueGainDb": 2,
+      "mcpFootstepGainDb": -1
+    },
+    "after": {
+      "jobId": "job-683c6c0f41c24cf2f573dc9a",
+      "projectRevision": 18,
+      "contentHash": "5384a7d8fbca09e6c264155fb42841c8a8a10ebe60106e0345f0df89fbc66335",
+      "frames": 3840000,
+      "durationSeconds": 80,
+      "bwfOrigin": 172800000,
+      "stemSumMaxDifference": 1.1920928955078125e-7,
+      "whiteFrames": [
+        {
+          "second": 0,
+          "frame": 0,
+          "grey": 255,
+          "audioImpulse": 0.5626623630523682
+        },
+        {
+          "second": 33,
+          "frame": 792,
+          "grey": 255,
+          "audioImpulse": 0.4687730073928833
+        },
+        {
+          "second": 55,
+          "frame": 1320,
+          "grey": 255,
+          "audioImpulse": 0.562410831451416
+        },
+        {
+          "second": 75,
+          "frame": 1800,
+          "grey": 255,
+          "audioImpulse": 0.557030200958252
+        }
+      ],
+      "independentProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 24,
+            "duration_ts": 3840000
+          }
+        ],
+        "format": {
+          "tags": {
+            "time_reference": "172800000"
+          }
+        }
+      },
+      "outputs": [
+        {
+          "role": "master",
+          "busId": "bus-master",
+          "file": "master.wav",
+          "sha256": "458b4b083f82e1d62a92580eab09c261e7d74ffe25d02a29d285e258186e305f",
+          "bytes": 23040654,
+          "frames": 3840000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -4.736787923390628,
+          "rmsDbfs": -30.957055281556958,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "dialogue",
+          "busId": "bus-dialogue",
+          "file": "dialogue.wav",
+          "sha256": "2011cfc73e06116149023232f6b7ec57871cb36520a97b513c5d80817f485992",
+          "bytes": 23040654,
+          "frames": 3840000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -17.65580443331609,
+          "rmsDbfs": -37.93553308518488,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "music",
+          "busId": "bus-music",
+          "file": "music.wav",
+          "sha256": "fdaf4aae1e4ccf34db9e219fde3edd13b9fbfa4463d1443416ccae623bd7a021",
+          "bytes": 23040654,
+          "frames": 3840000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -25.753350301993642,
+          "rmsDbfs": -32.49138291891721,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        },
+        {
+          "role": "effects",
+          "busId": "bus-effects",
+          "file": "effects.wav",
+          "sha256": "ee01f53e225875381bc1fd2993d045d530ece4605adfaa9da80f79cbd7dd7ca4",
+          "bytes": 23040654,
+          "frames": 3840000,
+          "sampleRate": 48000,
+          "channels": 2,
+          "bitDepth": 24,
+          "encoding": "pcm_s24le",
+          "originSample": 172800000,
+          "peakDbfs": -4.7841000010911445,
+          "rmsDbfs": -41.08305905109405,
+          "clippedSamples": 0,
+          "integratedLufs": null,
+          "truePeakDbtp": null
+        }
+      ],
+      "renderElapsedMs": 7331
+    },
+    "reviewedCut": {
+      "oldPictureId": "picture-91c697eda97158cc27fd9ef2",
+      "newPictureId": "picture-93d057166fdc178e30346bb1",
+      "footstepBeforeSeconds": 28,
+      "footstepAfterSeconds": 33,
+      "spanningRoomAndMusic": "explicit extension using existing 90-second sources",
+      "undoRedoVerified": true
+    },
+    "physicalAVCalibration": "NOT_RUN",
+    "realSceneHumanAcceptance": "NOT_RUN",
+    "liveSiblingBridges": "NOT_IMPLEMENTED"
+  },
+  "fractional": {
+    "status": "passed",
+    "projectId": "project-98dfe0c7717a31098bcef859200c1136",
+    "jobId": "job-144a41c8dd8bf4e034fe98d0",
+    "frameRate": {
+      "numerator": 30000,
+      "denominator": 1001
+    },
+    "sourceInFrame": 1,
+    "timelineStartSample": 4800,
+    "clipSourceInSample": 24,
+    "pictureMarkerFrame": 61,
+    "pictureMarkerPTS": 2.035367,
+    "exportedMarkerSample": 100896,
+    "exportFrames": 195390,
+    "bwfOrigin": 172800000,
+    "independentTimestampResidualSamples": 0,
+    "outputs": [
+      {
+        "role": "master",
+        "busId": "bus-master",
+        "file": "master.wav",
+        "sha256": "27fb28bb7d4949c4ecd4ff7cba10db72b8e10200efae28b81755ea102702bb67",
+        "bytes": 1172994,
+        "frames": 195390,
+        "sampleRate": 48000,
+        "channels": 2,
+        "bitDepth": 24,
+        "encoding": "pcm_s24le",
+        "originSample": 172800000,
+        "peakDbfs": -4.948499816329306,
+        "rmsDbfs": -57.857523145266754,
+        "clippedSamples": 0,
+        "integratedLufs": null,
+        "truePeakDbtp": null
+      },
+      {
+        "role": "dialogue",
+        "busId": "bus-dialogue",
+        "file": "dialogue.wav",
+        "sha256": "3c87b23ef57b60c468396dacc1b985a0c932858e6d4528d88ca0415d44a45a0e",
+        "bytes": 1172994,
+        "frames": 195390,
+        "sampleRate": 48000,
+        "channels": 2,
+        "bitDepth": 24,
+        "encoding": "pcm_s24le",
+        "originSample": 172800000,
+        "peakDbfs": null,
+        "rmsDbfs": null,
+        "clippedSamples": 0,
+        "integratedLufs": null,
+        "truePeakDbtp": null
+      },
+      {
+        "role": "music",
+        "busId": "bus-music",
+        "file": "music.wav",
+        "sha256": "3c87b23ef57b60c468396dacc1b985a0c932858e6d4528d88ca0415d44a45a0e",
+        "bytes": 1172994,
+        "frames": 195390,
+        "sampleRate": 48000,
+        "channels": 2,
+        "bitDepth": 24,
+        "encoding": "pcm_s24le",
+        "originSample": 172800000,
+        "peakDbfs": null,
+        "rmsDbfs": null,
+        "clippedSamples": 0,
+        "integratedLufs": null,
+        "truePeakDbtp": null
+      },
+      {
+        "role": "effects",
+        "busId": "bus-effects",
+        "file": "effects.wav",
+        "sha256": "27fb28bb7d4949c4ecd4ff7cba10db72b8e10200efae28b81755ea102702bb67",
+        "bytes": 1172994,
+        "frames": 195390,
+        "sampleRate": 48000,
+        "channels": 2,
+        "bitDepth": 24,
+        "encoding": "pcm_s24le",
+        "originSample": 172800000,
+        "peakDbfs": -4.948499816329306,
+        "rmsDbfs": -57.857523145266754,
+        "clippedSamples": 0,
+        "integratedLufs": null,
+        "truePeakDbtp": null
+      }
+    ]
+  },
+  "browserSoftwareSync": {
+    "playing": false,
+    "position": 1601105,
+    "observations": 500,
+    "p95AbsoluteFrames": 0.22797600014294517,
+    "maxAbsoluteFrames": 0.24741600014289133,
+    "videoTime": 33.355984,
+    "videoReady": 4,
+    "physicalAVCalibration": "NOT_RUN"
+  },
+  "responsive": {
+    "viewport": 390,
+    "documentWidth": 375,
+    "bodyWidth": 375
+  },
+  "finalSession": {
+    "projectId": "project-f6b6b521a4f6b5362f9b1ef4c72f3d5d",
+    "revision": 26,
+    "seconds": 75,
+    "activePictureId": "picture-91c697eda97158cc27fd9ef2",
+    "sourceCount": 6,
+    "clipCount": 8,
+    "checkpointLabel": "Director checkpoint",
+    "uiExportJobId": "job-8208c0543a02fae76c48c85b",
+    "restoredOutputs": [
+      {
+        "role": "master",
+        "file": "master.wav",
+        "sha256": "2c0b5be3d37208b7c04850691656c978191f2b79b63edaa34a15ac1212dffd9e",
+        "frames": 3600000,
+        "originSample": 172800000,
+        "pcmIdenticalAfterVersionRestore": true
+      },
+      {
+        "role": "dialogue",
+        "file": "dialogue.wav",
+        "sha256": "fc0278ba8d13c191daeea5c75a3e30d04da8aa13e06b262c9063b96e8e2d10d3",
+        "frames": 3600000,
+        "originSample": 172800000,
+        "pcmIdenticalAfterVersionRestore": true
+      },
+      {
+        "role": "music",
+        "file": "music.wav",
+        "sha256": "b8c01167914e1c1b2b75eed3bf56dcf1a6e2a76a6c7aae3a6b586cb31dc17c4e",
+        "frames": 3600000,
+        "originSample": 172800000,
+        "pcmIdenticalAfterVersionRestore": true
+      },
+      {
+        "role": "effects",
+        "file": "effects.wav",
+        "sha256": "d883ff13aa79789e96dd92f52bf7a94e44f7dec2990d1e4a4d59b5c719906da4",
+        "frames": 3600000,
+        "originSample": 172800000,
+        "pcmIdenticalAfterVersionRestore": true
+      }
+    ],
+    "allSourceHashesPreserved": true
+  },
+  "nativeUI": {
+    "method": "Observed Playwright CLI interactions and native browser screenshots",
+    "verified": [
+      "clip gain and save/reopen",
+      "selected and restored alternate take",
+      "clip drag and undo",
+      "right-edge trim and undo",
+      "file-picker WAV import",
+      "read-only picture-change preview/audition",
+      "explicit resolutions and apply",
+      "version-history restore",
+      "named checkpoint",
+      "completed master/D/M/E UI handoff",
+      "automation editor",
+      "desktop and responsive layout"
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "output/playwright/workstation-initial.png",
+      "sha256": "7469e54e0fac3757fbfc3f494060d814728705b205de3d51fb93240d3dbbfd4d"
+    },
+    {
+      "file": "output/playwright/workstation-selected.png",
+      "sha256": "81fedfd26b26da1e393c190da8b6590d4cf572eb0530d82e19aef0c96cf9dbe1"
+    },
+    {
+      "file": "output/playwright/review-unresolved.png",
+      "sha256": "1090b0550cd483ab1092c149d3edc2550ee98ba19b7bda3b57bec67ff384e50c"
+    },
+    {
+      "file": "output/playwright/review-applied.png",
+      "sha256": "cd981f3a8ac70cc877fd25943836351ba9941176639ed3516b163bae040b0929"
+    },
+    {
+      "file": "output/playwright/delivery-ready.png",
+      "sha256": "a91f12db35871e69c865dbb90b747a3ad9dd1fff6a851447648142e3baee7572"
+    },
+    {
+      "file": "output/playwright/workstation-final.png",
+      "sha256": "72c68bd0eb4c59a0b6a168d13be062d677e10971cfe3899dd4d1edb1c652afe8"
+    },
+    {
+      "file": "output/playwright/delivery-final.png",
+      "sha256": "414b18a47d4b490437350f095840f0d6d0cbcc0a4ff4649edcea266bf8d76c6b"
+    },
+    {
+      "file": "output/playwright/mobile-overflow-before.png",
+      "sha256": "253fdfec894a664e589b86d87b137d9e53189a2a9625258940b149412ca52ae1"
+    },
+    {
+      "file": "output/playwright/mobile-final.png",
+      "sha256": "e36abc22ebf69a3116d9c136219c1f1ce116d378e4bc0793374caa7543ffd195"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "core/adapters.mjs",
+      "sha256": "f975e389f80e750e8172d34a9745ea702a6750698e2ad501fddd47a3a3592dfa"
+    },
+    {
+      "file": "core/commands.mjs",
+      "sha256": "bb0d9cfbb38b4a17b3d0d37a0cd1d91d39e2dde3407b465fd0ef5cd6730ef67a"
+    },
+    {
+      "file": "core/dsp.mjs",
+      "sha256": "5b91442e6a2344c84052048e44ac0b9dcf2de48e0696363b1b981865dd605d04"
+    },
+    {
+      "file": "core/media.mjs",
+      "sha256": "1b56c00c026f457bd503d11c9d54f2d4c83422d4834cd2bf8d458432672ccd0d"
+    },
+    {
+      "file": "core/model.mjs",
+      "sha256": "65727262c37b37f869650d21e6b747514d579765d39bd670ec11e2efaf4d4df2"
+    },
+    {
+      "file": "core/reconform.mjs",
+      "sha256": "caa8a67be2dc059a8d271a2a479cb84c703d2335f18bb157ce8ceb323b94feb9"
+    },
+    {
+      "file": "core/store.mjs",
+      "sha256": "e3b44794b5eac1371f1b08858772ee5cad973545a8f28a10805c1f3dd4d12486"
+    },
+    {
+      "file": "core/time.mjs",
+      "sha256": "11c7f159ca0ac3d2c65e5dd2a9aeb7b0afcc72f4675fefe5828f74a3705a009c"
+    },
+    {
+      "file": "core/util.mjs",
+      "sha256": "c43a79c7352b9bf672ece3785bfb4353fa880db44fac5936d3f5de8310567a3a"
+    },
+    {
+      "file": "core/wav.mjs",
+      "sha256": "ac99c334e494d7a109bfd23fb2651bcad98eb913db33b4d41041033613fd5888"
+    },
+    {
+      "file": "mcp/stdio.mjs",
+      "sha256": "cc0fe9a2eaa09acf81256114b8e98908d35a0e113d880f80d2bab4b2044ae95f"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "d76b1d1530b34bbf656f2ef5f4508889f73532bb79cf2eb405a07c6004a91736"
+    },
+    {
+      "file": "package.json",
+      "sha256": "114b11e6c636baae4ee26239469babc95ce6127c3e38497bc1b1758da346a6d2"
+    },
+    {
+      "file": "schemas/command-envelope-v2.schema.json",
+      "sha256": "74469c9aa8a1d11b78d9f0c65d529fa17f3c23b58726b204d7e32a15287ff730"
+    },
+    {
+      "file": "schemas/project-v2.schema.json",
+      "sha256": "41394d19550ae529fe0779c063f15e8156869c3918cd4c96edd0c587163e70c6"
+    },
+    {
+      "file": "schemas/soundr-project.schema.json",
+      "sha256": "fe23a2d9bc668dee7e326be130ce2285c59ddf3a85c0057add0f6d750a07d071"
+    },
+    {
+      "file": "scripts/create-demo.mjs",
+      "sha256": "4715c3d62ecf1de4c1c8a0b3f9d0ca41dbb12dbb29141b047173bc6da315a444"
+    },
+    {
+      "file": "scripts/demo-frames.py",
+      "sha256": "195316f52f19cd1eae6e0f00ed832686144d3fc48089b897c2ec70066bfc5900"
+    },
+    {
+      "file": "scripts/demo-voices.ps1",
+      "sha256": "fd8fd9ff296c933120b01fa0590d24ccc673d5a330c3d5e846175b2d42c29040"
+    },
+    {
+      "file": "scripts/export-schema.mjs",
+      "sha256": "37d6c1bd636e7f8d6bead1232dc537d1850adc0bb8c6bfb9f237dd7142d4bd2b"
+    },
+    {
+      "file": "scripts/inspect_ardour.py",
+      "sha256": "53bc307d3c80c400ac0ab2e76ab9e6fe86e00d30d1b54e8f4c4e5eee2518831f"
+    },
+    {
+      "file": "scripts/record-verification.mjs",
+      "sha256": "17fe11c148f5d64077ca4f3be6ba89472123f7159efec71a013aa9a1a7a96cea"
+    },
+    {
+      "file": "scripts/validate_pack.py",
+      "sha256": "41046702d09296433f753b2c42db8831a462b530819a421ea76388ad7a2ec973"
+    },
+    {
+      "file": "scripts/verify-demo.mjs",
+      "sha256": "21a3bbbaaadc132d57892ec05f74acb80c9b1fee22f7bb441195997dcfb2c49e"
+    },
+    {
+      "file": "scripts/verify-fractional.mjs",
+      "sha256": "35cdb6ec2e18cf70285d5c782eae73d95872e22c8cbb90814f78f99106630521"
+    },
+    {
+      "file": "server/app.mjs",
+      "sha256": "52a0515f01ac6ce7e653ebe8dc1a080edc29fbb3ea667de449c6cadce8f9f5a5"
+    },
+    {
+      "file": "server/index.mjs",
+      "sha256": "5b04e7616695f93f7097196620499126023513ab200729617559b215562cd3ff"
+    },
+    {
+      "file": "server/render-worker.mjs",
+      "sha256": "e8a0a4a04274966429d6c7538ad2a72eb9629d1b405ee2a36c7aa2c08b1f330e"
+    },
+    {
+      "file": "server/renderer.mjs",
+      "sha256": "7586a47fb659983205080bad5da5c96103e0f7e530544751ddbb40f4a7a2871e"
+    },
+    {
+      "file": "server/service.mjs",
+      "sha256": "d6c8dbb274c3344dfa0ebecdd8d87a5ff9fd509a09fa916b4937792a430ecb07"
+    },
+    {
+      "file": "tests/core.test.mjs",
+      "sha256": "6de0d401f27b687e5a0a477fd1820fc8766d265a7d016d49265d07899a23534c"
+    },
+    {
+      "file": "tests/fixtures.mjs",
+      "sha256": "654817b70f71b0d64c1af13fc13a8f1f9fd58f6f1611da3d6fdae4181b23a1a9"
+    },
+    {
+      "file": "tests/integration.test.mjs",
+      "sha256": "3c13f2eba08fa4f7dc6fb2e6288863fbbf84475e484c560d9590e3d3e2c671a4"
+    },
+    {
+      "file": "tests/picture-preview.test.mjs",
+      "sha256": "0d2ac50c611cc42db66138d20737408d927cc3b5b82ab7211510cf15723247c1"
+    },
+    {
+      "file": "tests/review.test.mjs",
+      "sha256": "1aa0bb1bb14eb10f5386ff3eae69ae40b0261799ccaee12cbdc194c0cb19c55c"
+    },
+    {
+      "file": "tests/transport.test.mjs",
+      "sha256": "cc96be57832ec10bd5cca0f39d29a1b14a22c9a4825ab39756336612a267a887"
+    },
+    {
+      "file": "ui/api.mjs",
+      "sha256": "e35e413cce95d70b1d94bf20a12a88920db25958c3482baf0a0f00a5baf5bd89"
+    },
+    {
+      "file": "ui/app.mjs",
+      "sha256": "67e62eb7e56afd65abda24e2487dce205e08fc4561dbce91f1095160b7249d2f"
+    },
+    {
+      "file": "ui/dialogs.mjs",
+      "sha256": "d9c5bfccd17a336ab915465d6af8397bb373728e65461774d0fff8765a70095a"
+    },
+    {
+      "file": "ui/index.html",
+      "sha256": "69f54896742efa11ab30162d9db7807e3a846e7c20d7ad027f66880bc4562c02"
+    },
+    {
+      "file": "ui/mark.svg",
+      "sha256": "67790658f42469b8c2131e1b2984e9fc03c3d9ebba84220db279796498147918"
+    },
+    {
+      "file": "ui/style.css",
+      "sha256": "c98ae2c4e174443f4521c9e23f5fe12232185180565618cdb8758c6ac4d6baca"
+    },
+    {
+      "file": "ui/timeline.mjs",
+      "sha256": "83bcd28cd29a768053aa8953b29a933ae701af1c57d13dde803a242dffc63e80"
+    },
+    {
+      "file": "ui/transport.mjs",
+      "sha256": "0987bf2d4001d694905be535fd29a9439e3e29d1514257b70e2409094770beb1"
+    }
+  ],
+  "notAccepted": [
+    "Human editorial acceptance with a real owned scene",
+    "Physical speaker/display calibration",
+    "Live sibling-app round trips",
+    "Sustained large-session production playback",
+    "Six reference-application empirical scene benchmarks"
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "0.1",
+  "status": "NOT_RUN",
+  "scenarioType": "planned-acceptance",
+  "scenarios": [
+    {
+      "id": "ACC-001",
+      "title": "Import and preserve source",
+      "milestone": "M1",
+      "requirements": [
+        "SND-001"
+      ],
+      "passCondition": "Hash the owned inputs before/after import, edit, save and export; unsupported input yields a clear error.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-002",
+      "title": "Precision edit and undo",
+      "milestone": "M1",
+      "requirements": [
+        "SND-002"
+      ],
+      "passCondition": "Move, trim, slip, split and duplicate at known sample positions; union/source bounds and undo/redo remain exact.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-003",
+      "title": "Room-tone crossfade",
+      "milestone": "M1",
+      "requirements": [
+        "SND-003"
+      ],
+      "passCondition": "Overlap owned room tone, inspect curve/endpoints and audition transitions without a gap or unexplained level change.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-004",
+      "title": "Take selection and gain stage",
+      "milestone": "M1",
+      "requirements": [
+        "SND-004",
+        "SND-005"
+      ],
+      "passCondition": "Compare two candidate lines, select one, change clip gain separately from track automation; preserve the rejected source.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-005",
+      "title": "Routing and shared processing",
+      "milestone": "M1",
+      "requirements": [
+        "SND-006",
+        "SND-007"
+      ],
+      "passCondition": "Verify dialogue/music/effects isolation, builtin gain/highpass order and automation; reject cycles.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-006",
+      "title": "Save/reopen and failure recovery",
+      "milestone": "M1",
+      "requirements": [
+        "SND-008"
+      ],
+      "passCondition": "Reopen preserved IDs/settings; interrupt save and inject IO failure, then recover the previous valid state and idempotency records.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-007",
+      "title": "Picture sync",
+      "milestone": "M1",
+      "requirements": [
+        "SND-009"
+      ],
+      "passCondition": "Measure owned sync markers at start/middle/end and after seeks; inspect rendered sample/frame alignment independently.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-008",
+      "title": "Repeatable stem delivery",
+      "milestone": "M1",
+      "requirements": [
+        "SND-010"
+      ],
+      "passCondition": "Render twice with fixed settings; compare decoded PCM, range/channel alignment, hashes and manifest omissions.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-009",
+      "title": "Story links and cue queries",
+      "milestone": "M1",
+      "requirements": [
+        "SND-011",
+        "SND-012"
+      ],
+      "passCondition": "Resolve Amenewa by stable reference and reveal every unapproved line/take, including stale sibling revisions.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-010",
+      "title": "Shared commands and retries",
+      "milestone": "M1",
+      "requirements": [
+        "SND-013"
+      ],
+      "passCondition": "Run equivalent UI/MCP edits; exact retry returns its receipt, changed-payload retry and stale new request fail atomically.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-011",
+      "title": "Missing/hostile dependencies",
+      "milestone": "M1",
+      "requirements": [
+        "SND-014",
+        "SND-013"
+      ],
+      "passCondition": "Move a source, supply malformed media and escaping output paths; final export blocks and project/originals remain intact.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-012",
+      "title": "ADR recording",
+      "milestone": "M2",
+      "requirements": [
+        "SND-015"
+      ],
+      "passCondition": "Rehearse, record and compare owned replacement takes with device latency captured; incomplete recordings cannot become approved.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-013",
+      "title": "Reviewed picture reconform",
+      "milestone": "M2",
+      "requirements": [
+        "SND-016"
+      ],
+      "passCondition": "Insert five seconds, reorder/delete/duplicate shots and test spanning audio; preview/cancel/apply/undo, stale plans and ambiguity.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-014",
+      "title": "Interchange round trip",
+      "milestone": "M3",
+      "requirements": [
+        "SND-017"
+      ],
+      "passCondition": "Exchange an owned scene with recorded edition/options and report preserved, baked, changed and omitted entities.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-015",
+      "title": "Spectral derivative repair",
+      "milestone": "M3",
+      "requirements": [
+        "SND-018"
+      ],
+      "passCondition": "Repair an owned copy, retain original/parent hash, record settings and review artifacts/intelligibility.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-016",
+      "title": "Shot-attached move",
+      "milestone": "M2",
+      "requirements": [
+        "SND-011",
+        "SND-013",
+        "SND-016"
+      ],
+      "passCondition": "Move each deduplicated shot-attached sound once; preview absolute/spanning exceptions and anchored automation.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "ACC-017",
+      "title": "Fractional time mapping",
+      "milestone": "M1",
+      "requirements": [
+        "SND-009",
+        "SND-010"
+      ],
+      "passCondition": "Check 24/25 and accepted fractional frame rates at long and half-sample boundaries; reject unsupported drop-frame/VFR inputs.",
+      "status": "NOT_RUN"
+    }
+  ]
+}

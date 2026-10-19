@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+media/
+cache/
+renders/
+benchmark-runs/
+node_modules/
+.soundr-data/
+output/
+.playwright-cli/
+

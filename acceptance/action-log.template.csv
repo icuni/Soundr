@@ -1,0 +1,1 @@
+action_id,observed_at,application,version,edition,scene_revision,project_revision_before,intention,operation,parameters,expected_result,observed_result,status,error_code,error_text,project_revision_after,session_artifact,screenshot_artifact,audio_artifact,receipt_artifact,elapsed_ms,notes

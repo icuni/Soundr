@@ -1,0 +1,27 @@
+{
+  "observed_on": "2026-10-16",
+  "workspace": "D:\\ICUNI Group\\ICUNI Labs",
+  "soundr_folder": "D:\\ICUNI Group\\ICUNI Labs\\Soundr",
+  "scope": {
+    "registry": ["HKLM standard uninstall", "HKLM WOW6432Node uninstall", "HKCU standard uninstall"],
+    "program_files": ["REAPER (x64)", "REAPER", "Steinberg", "Avid", "Blackmagic Design", "Ardour", "Adobe"],
+    "recursive_disk_scan": false,
+    "applications_launched": false,
+    "sessions_modified": false
+  },
+  "registered_products": [
+    {"name": "DaVinci Resolve", "version": "20.1.00020"},
+    {"name": "DaVinci Resolve Renderer", "version": "20.1.00020"},
+    {"name": "DaVinci Resolve Control Panels", "version": "2.3.4.0"},
+    {"name": "Adobe Audition 2024", "version": "24.6.7"},
+    {"name": "Adobe Audition 2025", "version": "25.6.6"},
+    {"name": "Adobe Audition 2026", "version": "26.5"}
+  ],
+  "not_detected_within_scope": ["REAPER", "Nuendo", "Pro Tools", "Ardour"],
+  "limitations": ["Portable and nonstandard installs may exist.", "Registration does not prove runtime, licensing or feature availability.", "No owned scene was selected for cross-application testing."],
+  "sibling_evidence": [
+    {"file": "D:\\ICUNI Group\\ICUNI Labs\\Orchestra\\README.md", "observation": "Media-production control plane; explicit sibling ownership and artifact handoffs."},
+    {"file": "D:\\ICUNI Group\\ICUNI Labs\\Screenwritr\\package.json", "observation": "Local Electron/React application; MCP script present. No adapter/API inspected."},
+    {"file": "D:\\ICUNI Group\\ICUNI Labs\\Storytellr\\package.json", "observation": "Storyboard/animatic workspace; server and MCP scripts present. No adapter/API inspected."}
+  ]
+}

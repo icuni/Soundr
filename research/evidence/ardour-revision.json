@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Ardour/ardour",
+  "requested_ref": "master",
+  "resolved_commit": "a9ea4a98a336729a69453edbcc29905a79ac75e1",
+  "commit_time_utc": "2026-10-16T09:38:04Z",
+  "commit_url": "https://github.com/Ardour/ardour/commit/a9ea4a98a336729a69453edbcc29905a79ac75e1",
+  "metadata_endpoint": "https://api.github.com/repos/Ardour/ardour/commits/master",
+  "retrieved_on": "2026-10-16",
+  "runtime_tested": false
+}

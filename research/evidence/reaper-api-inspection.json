@@ -1,0 +1,122 @@
+{
+  "retrievedOn": "2026-10-16",
+  "url": "https://www.reaper.fm/sdk/reascript/reascripthelp.html",
+  "generatedByVersion": "7.82",
+  "sha256": "7f74a273e391c9e095a2478cea66fb9379ee4e694a46c31850780abd3d8c68f5",
+  "bytes": 961845,
+  "evidenceType": "documented-public-interface",
+  "functions": [
+    {
+      "name": "GetMediaItemInfo_Value",
+      "anchorFound": true
+    },
+    {
+      "name": "GetMediaItemTakeInfo_Value",
+      "anchorFound": true
+    },
+    {
+      "name": "GetMediaItemTake_Source",
+      "anchorFound": true
+    },
+    {
+      "name": "SplitMediaItem",
+      "anchorFound": true
+    },
+    {
+      "name": "CreateTrackSend",
+      "anchorFound": true
+    },
+    {
+      "name": "SetTrackSendInfo_Value",
+      "anchorFound": true
+    },
+    {
+      "name": "InsertEnvelopePointEx",
+      "anchorFound": true
+    },
+    {
+      "name": "SetRegionRenderMatrix",
+      "anchorFound": true
+    },
+    {
+      "name": "Undo_BeginBlock2",
+      "anchorFound": true
+    },
+    {
+      "name": "Undo_EndBlock2",
+      "anchorFound": true
+    },
+    {
+      "name": "GetProjExtState",
+      "anchorFound": true
+    },
+    {
+      "name": "GetSetProjectInfo",
+      "anchorFound": true
+    },
+    {
+      "name": "EnumRegionRenderMatrix",
+      "anchorFound": true
+    },
+    {
+      "name": "GetEnvelopePointEx",
+      "anchorFound": true
+    },
+    {
+      "name": "SetMediaItemInfo_Value",
+      "anchorFound": true
+    },
+    {
+      "name": "SetMediaItemTakeInfo_Value",
+      "anchorFound": true
+    },
+    {
+      "name": "CountMediaItems",
+      "anchorFound": true
+    },
+    {
+      "name": "GetMediaItem",
+      "anchorFound": true
+    },
+    {
+      "name": "GetProjectStateChangeCount",
+      "anchorFound": true
+    }
+  ],
+  "fields": [
+    {
+      "name": "D_POSITION",
+      "documented": true
+    },
+    {
+      "name": "D_LENGTH",
+      "documented": true
+    },
+    {
+      "name": "D_VOL",
+      "documented": true
+    },
+    {
+      "name": "D_STARTOFFS",
+      "documented": true
+    },
+    {
+      "name": "D_FADEINLEN",
+      "documented": true
+    },
+    {
+      "name": "D_FADEOUTLEN",
+      "documented": true
+    },
+    {
+      "name": "D_PLAYRATE",
+      "documented": true
+    }
+  ],
+  "limitations": [
+    "API documentation, not proprietary implementation.",
+    "No REAPER runtime or project was inspected.",
+    "Full documentation body is not vendored.",
+    "Online API may differ from a future installed version."
+  ]
+}

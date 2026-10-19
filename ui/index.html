@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Soundr — Orama</title>
+    <link rel="icon" href="/ui/mark.svg" />
+    <link rel="stylesheet" href="/ui/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Orama Soundr"
+        ><span class="brand-mark">O</span
+        ><span><small>ORAMA</small><strong>Soundr</strong></span></a
+      >
+      <div class="session-heading">
+        <label class="sr-only" for="project-select">Open project</label
+        ><select id="project-select">
+          <option value="">Open a session</option></select
+        ><span id="saved-state">Your sound, from first performance to final picture.</span>
+      </div>
+      <nav class="main-actions" aria-label="Session actions">
+        <button id="new-project">New session</button><button id="open-demo">Open demo</button
+        ><button id="save-project" disabled>Save version</button
+        ><button id="versions" disabled>Versions</button
+        ><button class="primary" id="export" disabled>
+          Export mix & stems <span aria-hidden="true">↗</span>
+        </button>
+      </nav>
+    </header>
+    <div class="workspace">
+      <aside class="story-rail">
+        <div class="rail-heading">
+          <span class="eyebrow">STORY & SOUND</span
+          ><button class="quiet small" id="import-story" disabled>Import story</button>
+        </div>
+        <div class="rail-tabs" role="group" aria-label="Browser">
+          <button id="show-cues" aria-pressed="true">Dialogue</button
+          ><button id="show-library" aria-pressed="false">Library</button>
+        </div>
+        <div id="browser-content"></div>
+        <button class="rail-add" id="add-line" disabled>＋ Add a dialogue line</button>
+        <div class="rail-foot">
+          <span class="connection-dot"></span> Independent workstation<span
+            >Human-First AI · Director-led</span
+          >
+        </div>
+      </aside>
+      <main>
+        <section class="monitor-grid" aria-label="Picture and sound editing">
+          <div class="picture-panel">
+            <div class="panel-bar">
+              <span class="eyebrow">PICTURE</span
+              ><span id="picture-label">No picture attached</span>
+              <div class="panel-actions">
+                <button id="picture-import" class="quiet small" disabled>Import picture</button
+                ><button id="review-cut" class="quiet small" disabled>Review picture change</button>
+              </div>
+            </div>
+            <div class="picture-stage">
+              <video id="picture" muted playsinline preload="metadata"></video>
+              <div id="picture-empty">
+                <span class="frame-icon" aria-hidden="true">▱</span>
+                <h1>A room for the soundtrack.</h1>
+                <p>Bring in an animatic. Keep every performance as the picture evolves.</p>
+                <button id="empty-demo" class="primary">Explore the generated demo</button>
+              </div>
+              <div id="preview-banner" hidden>READ-ONLY · PROPOSED CUT</div>
+            </div>
+            <div class="cue-ribbon">
+              <span class="cue-kicker" id="cue-character">PERFORMANCE</span>
+              <p id="cue-text">Select a dialogue clip to reveal its line and every take.</p>
+              <span id="cue-approval"></span>
+            </div>
+          </div>
+          <aside class="inspector-panel">
+            <div class="inspector-tabs" role="group" aria-label="Inspector">
+              <button id="clip-tab" aria-pressed="true">Clip & takes</button
+              ><button id="mix-tab" aria-pressed="false">Mix & routing</button
+              ><button id="delivery-tab" aria-pressed="false">Delivery</button>
+            </div>
+            <div id="inspector"></div>
+          </aside>
+        </section>
+        <section class="edit-section" aria-label="Audio timeline">
+          <div class="transport-bar">
+            <div class="transport-buttons">
+              <button id="to-start" aria-label="Go to start" disabled>↤</button
+              ><button class="play" id="play" aria-label="Play" disabled>▶</button
+              ><button id="undo" aria-label="Undo" disabled>↶</button
+              ><button id="redo" aria-label="Redo" disabled>↷</button>
+            </div>
+            <output id="timecode" aria-live="off">01:00:00:00</output><span id="clock-label">24 fps · 48 kHz</span>
+            <div class="master-level" aria-label="Master output level">
+              <span>MASTER</span><meter id="master-meter" min="0" max="1" value="0"></meter>
+            </div>
+            <div class="timeline-actions">
+              <button id="import-audio" disabled>＋ Import sound</button
+              ><button id="automation" disabled>Automation</button
+              ><label class="zoom-label"
+                >Zoom
+                <input
+                  id="zoom"
+                  aria-label="Timeline zoom"
+                  type="range"
+                  min="6"
+                  max="80"
+                  value="12"
+              /></label>
+            </div>
+          </div>
+          <div id="timeline-scroll" class="timeline-scroll">
+            <div id="timeline" class="timeline">
+              <div class="timeline-empty">Create a session or open the demo to begin.</div>
+            </div>
+          </div>
+          <div class="timeline-footer">
+            <span id="timeline-hint"
+              >Non-destructive sources · Editable takes · Versioned picture</span
+            ><span>Space play / pause · S split · Ctrl Z undo</span>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="statusbar">
+      <span id="status" role="status" aria-live="polite">Connecting to the local workstation…</span
+      ><button id="reload" class="quiet small" hidden>Reload current version</button
+      ><span id="work-state">LOCAL SESSION</span>
+    </footer>
+    <dialog id="modal">
+      <div class="modal-heading">
+        <h2 id="modal-title"></h2>
+        <button id="modal-close" aria-label="Close dialog">×</button>
+      </div>
+      <div id="modal-body"></div>
+      <div id="modal-actions"></div>
+    </dialog>
+    <input
+      id="audio-file"
+      class="sr-only"
+      type="file"
+      accept=".wav,audio/wav"
+      tabindex="-1"
+    /><input
+      id="picture-file"
+      class="sr-only"
+      type="file"
+      accept=".mp4,.webm"
+      tabindex="-1"
+    /><input
+      id="story-file"
+      class="sr-only"
+      type="file"
+      accept=".json,.screenwritr"
+      tabindex="-1"
+    />
+    <script type="module" src="/ui/app.mjs"></script>
+  </body>
+</html>

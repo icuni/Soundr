@@ -1,0 +1,1354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "projectId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "expectedRevision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "commands": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "project.timing.set"
+              },
+              "durationSamples": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8640000
+              },
+              "frameRate": {
+                "type": "object",
+                "properties": {
+                  "numerator": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 120000
+                  },
+                  "denominator": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1001
+                  }
+                },
+                "required": [
+                  "numerator",
+                  "denominator"
+                ],
+                "additionalProperties": false
+              },
+              "timelineOrigin": {
+                "type": "object",
+                "properties": {
+                  "sample": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "timecode": {
+                    "type": "string",
+                    "pattern": "^\\d{2}:\\d{2}:\\d{2}:\\d{2}$"
+                  }
+                },
+                "required": [
+                  "sample",
+                  "timecode"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "durationSamples",
+              "frameRate",
+              "timelineOrigin"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "project.set"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 250
+              }
+            },
+            "required": [
+              "type",
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "story.set"
+              },
+              "storyProjectId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "story": {
+                "type": "object",
+                "properties": {
+                  "characters": {
+                    "maxItems": 2000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "name": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "sourceRef": {
+                          "default": null,
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "application": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                },
+                                "projectId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "entityId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "revision": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                }
+                              },
+                              "required": [
+                                "application",
+                                "projectId",
+                                "entityId",
+                                "revision"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "sourceRef"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "scenes": {
+                    "maxItems": 2000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "name": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "sourceRef": {
+                          "default": null,
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "application": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                },
+                                "projectId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "entityId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "revision": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                }
+                              },
+                              "required": [
+                                "application",
+                                "projectId",
+                                "entityId",
+                                "revision"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "sourceRef"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "lines": {
+                    "maxItems": 10000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "sceneId": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "characterId": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 160,
+                              "pattern": "^[A-Za-z0-9_.:-]+$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "text": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "reviewRequired": {
+                          "type": "boolean"
+                        },
+                        "sourceRef": {
+                          "default": null,
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "application": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                },
+                                "projectId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "entityId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "revision": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                }
+                              },
+                              "required": [
+                                "application",
+                                "projectId",
+                                "entityId",
+                                "revision"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "sceneId",
+                        "characterId",
+                        "text",
+                        "reviewRequired",
+                        "sourceRef"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "shots": {
+                    "maxItems": 5000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "name": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "sourceRef": {
+                          "default": null,
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "application": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                },
+                                "projectId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "entityId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 160,
+                                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                                },
+                                "revision": {
+                                  "type": "string",
+                                  "maxLength": 10000
+                                }
+                              },
+                              "required": [
+                                "application",
+                                "projectId",
+                                "entityId",
+                                "revision"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "sceneId": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "startFrame": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 9007199254740991
+                        },
+                        "durationFrames": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 9007199254740991
+                        },
+                        "isPresent": {
+                          "default": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "sourceRef",
+                        "sceneId",
+                        "startFrame",
+                        "durationFrames",
+                        "isPresent"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "imports": {
+                    "maxItems": 200,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "application": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "projectId": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 160,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        "revision": {
+                          "type": "string",
+                          "maxLength": 10000
+                        },
+                        "sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        }
+                      },
+                      "required": [
+                        "application",
+                        "projectId",
+                        "revision",
+                        "sha256"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "characters",
+                  "scenes",
+                  "lines",
+                  "shots",
+                  "imports"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "storyProjectId",
+              "story"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.add"
+              },
+              "sourceId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "trackId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "startSample": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "sourceInSample": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "durationSamples": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 250
+              },
+              "lineId": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sceneId": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "shotId": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "sourceId",
+              "trackId",
+              "startSample",
+              "sourceInSample",
+              "durationSamples",
+              "lineId",
+              "sceneId",
+              "shotId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.move"
+              },
+              "clipIds": {
+                "minItems": 1,
+                "maxItems": 200,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                }
+              },
+              "deltaSamples": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "clipIds",
+              "deltaSamples"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.trim"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "side": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right"
+                ]
+              },
+              "amountSamples": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "clipId",
+              "side",
+              "amountSamples"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.slip"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "deltaSamples": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "clipId",
+              "deltaSamples"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.split"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "atSample": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "clipId",
+              "atSample"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.duplicate"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "deltaSamples": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "clipId",
+              "deltaSamples"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.set"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "gainDb": {
+                "type": "number",
+                "minimum": -120,
+                "maximum": 36
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 250
+              },
+              "fadeIn": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "fadeOut": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "fadeCurve": {
+                "type": "string",
+                "enum": [
+                  "equal-gain",
+                  "equal-power"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "clipId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "clip.link"
+              },
+              "clipId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "lineId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sceneId": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "shotId": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "clipId",
+              "lineId",
+              "sceneId",
+              "shotId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "take.add"
+              },
+              "groupId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "sourceId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 250
+              }
+            },
+            "required": [
+              "type",
+              "groupId",
+              "sourceId",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "take.select"
+              },
+              "groupId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "takeId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              }
+            },
+            "required": [
+              "type",
+              "groupId",
+              "takeId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "cue.approve"
+              },
+              "cueId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "needs-review",
+                  "approved",
+                  "rejected"
+                ]
+              },
+              "reviewer": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "required": [
+              "type",
+              "cueId",
+              "status",
+              "reviewer"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "track.set"
+              },
+              "trackId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "gainDb": {
+                "type": "number",
+                "minimum": -120,
+                "maximum": 36
+              },
+              "pan": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "muted": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "trackId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "bus.set"
+              },
+              "busId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "gainDb": {
+                "type": "number",
+                "minimum": -120,
+                "maximum": 36
+              },
+              "muted": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "busId"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "processor.set"
+              },
+              "ownerId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "processor": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 160,
+                        "pattern": "^[A-Za-z0-9_.:-]+$"
+                      },
+                      "type": {
+                        "type": "string",
+                        "const": "gain"
+                      },
+                      "gainDb": {
+                        "type": "number",
+                        "minimum": -120,
+                        "maximum": 36
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "type",
+                      "gainDb",
+                      "enabled"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 160,
+                        "pattern": "^[A-Za-z0-9_.:-]+$"
+                      },
+                      "type": {
+                        "type": "string",
+                        "const": "highpass"
+                      },
+                      "cutoffHz": {
+                        "type": "number",
+                        "minimum": 20,
+                        "maximum": 20000
+                      },
+                      "q": {
+                        "type": "number",
+                        "minimum": 0.1,
+                        "maximum": 10
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "type",
+                      "cutoffHz",
+                      "q",
+                      "enabled"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "ownerId",
+              "processor"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "route.set"
+              },
+              "route": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  "fromId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  "toBusId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  "tap": {
+                    "type": "string",
+                    "enum": [
+                      "pre-fader",
+                      "post-fader"
+                    ]
+                  },
+                  "gainDb": {
+                    "type": "number",
+                    "minimum": -120,
+                    "maximum": 36
+                  }
+                },
+                "required": [
+                  "id",
+                  "fromId",
+                  "toBusId",
+                  "tap",
+                  "gainDb"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "route"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "automation.set"
+              },
+              "automation": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  },
+                  "target": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "track",
+                          "bus",
+                          "processor"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 160,
+                        "pattern": "^[A-Za-z0-9_.:-]+$"
+                      },
+                      "parameter": {
+                        "type": "string",
+                        "enum": [
+                          "gainDb",
+                          "cutoffHz",
+                          "q"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "id",
+                      "parameter"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "anchor": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "const": "timeline"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "const": "cue"
+                          },
+                          "cueId": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 160,
+                            "pattern": "^[A-Za-z0-9_.:-]+$"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "cueId"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "interpolation": {
+                    "type": "string",
+                    "enum": [
+                      "linear",
+                      "step"
+                    ]
+                  },
+                  "points": {
+                    "maxItems": 10000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sample": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "value": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "sample",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "target",
+                  "anchor",
+                  "interpolation",
+                  "points"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "automation"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "picture.use"
+              },
+              "pictureId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "initial",
+                  "same-cut"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "pictureId",
+              "mode"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "history.undo"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "history.redo"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "project.save"
+              },
+              "label": {
+                "default": "Saved version",
+                "type": "string",
+                "maxLength": 160
+              }
+            },
+            "required": [
+              "type",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "projectId",
+    "expectedRevision",
+    "requestId",
+    "commands"
+  ],
+  "additionalProperties": false
+}

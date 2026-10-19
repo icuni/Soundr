@@ -1,0 +1,732 @@
+{
+  "schemaVersion": "0.1.0",
+  "purpose": "illustrative-fixture",
+  "id": "soundr-scene-75s",
+  "revision": 0,
+  "title": "Illustrative 75-second Soundr scene (media unresolved)",
+  "sampleRate": 48000,
+  "activePictureRevisionId": "picture-v001",
+  "sources": [
+    {
+      "id": "source-dialogue-a",
+      "uri": "media/dialogue_take_a.wav",
+      "sha256": null,
+      "sampleRate": 48000,
+      "channelCount": 1,
+      "durationSamples": 480000,
+      "availability": "unresolved",
+      "role": "original",
+      "parentSourceId": null
+    },
+    {
+      "id": "source-dialogue-b",
+      "uri": "media/dialogue_take_b.wav",
+      "sha256": null,
+      "sampleRate": 48000,
+      "channelCount": 1,
+      "durationSamples": 480000,
+      "availability": "unresolved",
+      "role": "original",
+      "parentSourceId": null
+    },
+    {
+      "id": "source-room",
+      "uri": "media/room_tone.wav",
+      "sha256": null,
+      "sampleRate": 48000,
+      "channelCount": 2,
+      "durationSamples": 1920000,
+      "availability": "unresolved",
+      "role": "original",
+      "parentSourceId": null
+    },
+    {
+      "id": "source-footstep",
+      "uri": "media/footstep.wav",
+      "sha256": null,
+      "sampleRate": 48000,
+      "channelCount": 1,
+      "durationSamples": 48000,
+      "availability": "unresolved",
+      "role": "original",
+      "parentSourceId": null
+    },
+    {
+      "id": "source-music",
+      "uri": "media/music.wav",
+      "sha256": null,
+      "sampleRate": 48000,
+      "channelCount": 2,
+      "durationSamples": 3600000,
+      "availability": "unresolved",
+      "role": "original",
+      "parentSourceId": null
+    }
+  ],
+  "pictureRevisions": [
+    {
+      "id": "picture-v001",
+      "label": "Illustrative picture revision 1",
+      "uri": "media/picture_v001.mp4",
+      "sha256": null,
+      "availability": "unresolved",
+      "fps": {
+        "numerator": 24,
+        "denominator": 1
+      },
+      "startFrame": 0,
+      "durationFrames": 1800,
+      "timelineStartSample": 0,
+      "startTimecode": "01:00:00:00",
+      "dropFrame": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-line-01",
+      "kind": "dialogue",
+      "label": "Amenewa line 1",
+      "text": "Illustrative dialogue text; replace with an owned scene.",
+      "textRevision": 0,
+      "startSample": 576000,
+      "durationSamples": 192000,
+      "pictureRevisionId": "picture-v001",
+      "storyRefs": [
+        {
+          "system": "screenwritr",
+          "projectId": "screenwritr-example",
+          "entityType": "character",
+          "entityId": "character-amenewa",
+          "revision": "example-v1"
+        },
+        {
+          "system": "screenwritr",
+          "projectId": "screenwritr-example",
+          "entityType": "line",
+          "entityId": "line-01",
+          "revision": "example-v1"
+        },
+        {
+          "system": "storytellr",
+          "projectId": "storytellr-example",
+          "entityType": "shot",
+          "entityId": "shot-03",
+          "revision": "example-v1"
+        }
+      ],
+      "approval": {
+        "status": "draft",
+        "reviewerId": null,
+        "approvedTakeId": null,
+        "approvedPictureRevisionId": null,
+        "notes": "Illustrative; no recorded performance has been reviewed."
+      }
+    },
+    {
+      "id": "cue-room",
+      "kind": "ambience",
+      "label": "Room tone",
+      "text": "",
+      "textRevision": 0,
+      "startSample": 0,
+      "durationSamples": 3600000,
+      "pictureRevisionId": "picture-v001",
+      "storyRefs": [
+        {
+          "system": "storytellr",
+          "projectId": "storytellr-example",
+          "entityType": "scene",
+          "entityId": "scene-01",
+          "revision": "example-v1"
+        }
+      ],
+      "approval": {
+        "status": "draft",
+        "reviewerId": null,
+        "approvedTakeId": null,
+        "approvedPictureRevisionId": null,
+        "notes": "Illustrative; no recorded performance has been reviewed."
+      }
+    },
+    {
+      "id": "cue-footstep",
+      "kind": "effect",
+      "label": "Footstep",
+      "text": "",
+      "textRevision": 0,
+      "startSample": 1344000,
+      "durationSamples": 48000,
+      "pictureRevisionId": "picture-v001",
+      "storyRefs": [
+        {
+          "system": "storytellr",
+          "projectId": "storytellr-example",
+          "entityType": "shot",
+          "entityId": "shot-04",
+          "revision": "example-v1"
+        },
+        {
+          "system": "storytellr",
+          "projectId": "storytellr-example",
+          "entityType": "event",
+          "entityId": "event-step-01",
+          "revision": "example-v1"
+        }
+      ],
+      "approval": {
+        "status": "draft",
+        "reviewerId": null,
+        "approvedTakeId": null,
+        "approvedPictureRevisionId": null,
+        "notes": "Illustrative; no recorded performance has been reviewed."
+      }
+    },
+    {
+      "id": "cue-music",
+      "kind": "music",
+      "label": "Music bed",
+      "text": "",
+      "textRevision": 0,
+      "startSample": 0,
+      "durationSamples": 3600000,
+      "pictureRevisionId": "picture-v001",
+      "storyRefs": [
+        {
+          "system": "storytellr",
+          "projectId": "storytellr-example",
+          "entityType": "scene",
+          "entityId": "scene-01",
+          "revision": "example-v1"
+        }
+      ],
+      "approval": {
+        "status": "draft",
+        "reviewerId": null,
+        "approvedTakeId": null,
+        "approvedPictureRevisionId": null,
+        "notes": "Illustrative; no recorded performance has been reviewed."
+      }
+    }
+  ],
+  "takeGroups": [
+    {
+      "id": "group-line-01",
+      "cueId": "cue-line-01",
+      "selectedTakeId": "take-a",
+      "takes": [
+        {
+          "id": "take-a",
+          "label": "Candidate A",
+          "rating": null,
+          "notes": "Placeholder source"
+        },
+        {
+          "id": "take-b",
+          "label": "Candidate B",
+          "rating": null,
+          "notes": "Placeholder source"
+        }
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "id": "clip-line-a",
+      "sourceId": "source-dialogue-a",
+      "trackId": "track-dialogue",
+      "sourceInSample": 48000,
+      "timelineStartSample": 576000,
+      "durationSamples": 192000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 480,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 480,
+        "curve": "equal-gain"
+      },
+      "takeId": "take-a",
+      "cueIds": [
+        "cue-line-01"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-line-01",
+        "offsetSamples": 0
+      }
+    },
+    {
+      "id": "clip-line-b",
+      "sourceId": "source-dialogue-b",
+      "trackId": "track-dialogue",
+      "sourceInSample": 96000,
+      "timelineStartSample": 576000,
+      "durationSamples": 192000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 480,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 480,
+        "curve": "equal-gain"
+      },
+      "takeId": "take-b",
+      "cueIds": [
+        "cue-line-01"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-line-01",
+        "offsetSamples": 0
+      }
+    },
+    {
+      "id": "clip-room-a",
+      "sourceId": "source-room",
+      "trackId": "track-ambience",
+      "sourceInSample": 0,
+      "timelineStartSample": 0,
+      "durationSamples": 1920000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 4800,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 240000,
+        "curve": "equal-gain"
+      },
+      "takeId": null,
+      "cueIds": [
+        "cue-room"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-room",
+        "offsetSamples": 0
+      }
+    },
+    {
+      "id": "clip-room-b",
+      "sourceId": "source-room",
+      "trackId": "track-ambience",
+      "sourceInSample": 0,
+      "timelineStartSample": 1680000,
+      "durationSamples": 1920000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 240000,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 4800,
+        "curve": "equal-gain"
+      },
+      "takeId": null,
+      "cueIds": [
+        "cue-room"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-room",
+        "offsetSamples": 1680000
+      }
+    },
+    {
+      "id": "clip-footstep",
+      "sourceId": "source-footstep",
+      "trackId": "track-effects",
+      "sourceInSample": 0,
+      "timelineStartSample": 1344000,
+      "durationSamples": 48000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 96,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 2400,
+        "curve": "equal-gain"
+      },
+      "takeId": null,
+      "cueIds": [
+        "cue-footstep"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-footstep",
+        "offsetSamples": 0
+      }
+    },
+    {
+      "id": "clip-music",
+      "sourceId": "source-music",
+      "trackId": "track-music",
+      "sourceInSample": 0,
+      "timelineStartSample": 0,
+      "durationSamples": 3600000,
+      "gainDb": 0,
+      "isEnabled": true,
+      "fadeIn": {
+        "durationSamples": 24000,
+        "curve": "equal-gain"
+      },
+      "fadeOut": {
+        "durationSamples": 48000,
+        "curve": "equal-gain"
+      },
+      "takeId": null,
+      "cueIds": [
+        "cue-music"
+      ],
+      "anchor": {
+        "type": "cue",
+        "cueId": "cue-music",
+        "offsetSamples": 0
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track-dialogue",
+      "label": "Dialogue",
+      "channelCount": 2,
+      "clipIds": [
+        "clip-line-a",
+        "clip-line-b"
+      ],
+      "overlapPolicy": "selected-take",
+      "gainDb": 0,
+      "pan": 0,
+      "isMuted": false,
+      "processors": []
+    },
+    {
+      "id": "track-ambience",
+      "label": "Ambience",
+      "channelCount": 2,
+      "clipIds": [
+        "clip-room-a",
+        "clip-room-b"
+      ],
+      "overlapPolicy": "mix",
+      "gainDb": 0,
+      "pan": 0,
+      "isMuted": false,
+      "processors": []
+    },
+    {
+      "id": "track-effects",
+      "label": "Effects",
+      "channelCount": 2,
+      "clipIds": [
+        "clip-footstep"
+      ],
+      "overlapPolicy": "mix",
+      "gainDb": 0,
+      "pan": 0,
+      "isMuted": false,
+      "processors": []
+    },
+    {
+      "id": "track-music",
+      "label": "Music",
+      "channelCount": 2,
+      "clipIds": [
+        "clip-music"
+      ],
+      "overlapPolicy": "mix",
+      "gainDb": 0,
+      "pan": 0,
+      "isMuted": false,
+      "processors": []
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-dialogue",
+      "label": "Dialogue",
+      "role": "dialogue",
+      "channelCount": 2,
+      "gainDb": 0,
+      "isMuted": false,
+      "processors": [
+        {
+          "id": "processor-dialogue-hp",
+          "type": "builtin.highpass",
+          "version": "1",
+          "isEnabled": true,
+          "latencySamples": 0,
+          "parameters": {
+            "cutoffHz": 80,
+            "q": 0.707
+          }
+        }
+      ]
+    },
+    {
+      "id": "bus-music",
+      "label": "Music",
+      "role": "music",
+      "channelCount": 2,
+      "gainDb": 0,
+      "isMuted": false,
+      "processors": []
+    },
+    {
+      "id": "bus-effects",
+      "label": "Effects",
+      "role": "effects",
+      "channelCount": 2,
+      "gainDb": 0,
+      "isMuted": false,
+      "processors": []
+    },
+    {
+      "id": "bus-master",
+      "label": "Master",
+      "role": "master",
+      "channelCount": 2,
+      "gainDb": 0,
+      "isMuted": false,
+      "processors": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-dialogue",
+      "fromId": "track-dialogue",
+      "toBusId": "bus-dialogue",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-ambience",
+      "fromId": "track-ambience",
+      "toBusId": "bus-effects",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-effects",
+      "fromId": "track-effects",
+      "toBusId": "bus-effects",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-music",
+      "fromId": "track-music",
+      "toBusId": "bus-music",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-d-master",
+      "fromId": "bus-dialogue",
+      "toBusId": "bus-master",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-m-master",
+      "fromId": "bus-music",
+      "toBusId": "bus-master",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    },
+    {
+      "id": "route-e-master",
+      "fromId": "bus-effects",
+      "toBusId": "bus-master",
+      "tap": "post-fader",
+      "gainDb": 0,
+      "channelMap": [
+        {
+          "from": 0,
+          "to": 0,
+          "gain": 1
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "gain": 1
+        }
+      ]
+    }
+  ],
+  "automation": [
+    {
+      "id": "automation-music-duck",
+      "target": {
+        "kind": "track",
+        "id": "track-music",
+        "parameter": "gainDb"
+      },
+      "anchor": {
+        "type": "timeline"
+      },
+      "interpolation": "linear",
+      "points": [
+        {
+          "timeSample": 0,
+          "value": -6
+        },
+        {
+          "timeSample": 528000,
+          "value": -6
+        },
+        {
+          "timeSample": 576000,
+          "value": -18
+        },
+        {
+          "timeSample": 768000,
+          "value": -18
+        },
+        {
+          "timeSample": 816000,
+          "value": -6
+        },
+        {
+          "timeSample": 3600000,
+          "value": -6
+        }
+      ]
+    },
+    {
+      "id": "automation-hp",
+      "target": {
+        "kind": "processor",
+        "id": "processor-dialogue-hp",
+        "parameter": "cutoffHz"
+      },
+      "anchor": {
+        "type": "timeline"
+      },
+      "interpolation": "step",
+      "points": [
+        {
+          "timeSample": 0,
+          "value": 80
+        },
+        {
+          "timeSample": 2400000,
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "renderJobs": [
+    {
+      "id": "render-stems-v001",
+      "status": "draft",
+      "projectRevision": 0,
+      "projectContentHash": null,
+      "pictureRevisionId": "picture-v001",
+      "startSample": 0,
+      "durationSamples": 3600000,
+      "outputs": [
+        {
+          "busId": "bus-dialogue",
+          "relativePath": "renders/scene_v001_dialogue.wav"
+        },
+        {
+          "busId": "bus-music",
+          "relativePath": "renders/scene_v001_music.wav"
+        },
+        {
+          "busId": "bus-effects",
+          "relativePath": "renders/scene_v001_effects.wav"
+        }
+      ],
+      "container": "wav",
+      "encoding": "pcm_s24le",
+      "sampleRate": 48000,
+      "channelCount": 2,
+      "tailSamples": 0,
+      "normalization": "off",
+      "dither": "off",
+      "tap": "post-bus-pre-master"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "researchDate": "2026-10-16",
+  "status": "NOT_RUN",
+  "ownedSceneSelected": false,
+  "sceneDurationSeconds": null,
+  "sceneManifest": null,
+  "runs": [
+    {
+      "application": "REAPER",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    },
+    {
+      "application": "Nuendo",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    },
+    {
+      "application": "Pro Tools",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    },
+    {
+      "application": "Fairlight",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    },
+    {
+      "application": "Ardour",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    },
+    {
+      "application": "Audition",
+      "status": "NOT_RUN",
+      "version": null,
+      "edition": null,
+      "sessionArtifact": null,
+      "actionLog": null,
+      "outputManifest": null
+    }
+  ],
+  "blockers": [
+    "No owned common scene selected.",
+    "Four reference applications were not detected in bounded install checks; nonstandard/portable installs remain possible.",
+    "Resolve/Audition registrations were observed but no application was launched."
+  ],
+  "illustrativeProject": "examples/scene-75s.soundr.json",
+  "illustrativeProjectIsPlayable": false
+}
